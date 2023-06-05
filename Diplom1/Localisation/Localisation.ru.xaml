@@ -67,7 +67,7 @@
     <v:String x:Key="bt_Redact">Редактировать</v:String>
     <v:String x:Key="bt_Add">Добавить</v:String>
     <v:String x:Key="bt_Change">Изменить</v:String>
-    <v:String x:Key="bt_Save">Сохранение</v:String>
+    <v:String x:Key="bt_Save">Сохранить</v:String>
 
     <v:String x:Key="tb_FioKlienta">ФИО клиента</v:String>
     <v:String x:Key="tb_DateS">Дата создания</v:String>

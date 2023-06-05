@@ -25,7 +25,7 @@
                       SelectionChanged="fltr_SelectChanged"/>
         </UniformGrid>
 
-        <ListView Name="LV_Tovar" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center">
+        <ListView Name="LV_Tovar" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" >
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"></WrapPanel>
@@ -125,7 +125,17 @@
         </ListView>
 
 
-        <Button  Grid.Row="2" MaxWidth="500" Content="{DynamicResource bt_Add}" FontSize="20" Margin="0,5" Click="Add_Click"   FontFamily="Comic Sans MS">
+        <Button Click="btExportClick" Grid.Row="2"
+                     Background="Transparent"
+                    Margin="5,5,0,5"                
+                HorizontalAlignment="Right">
+            <Button.Content >
+                <Image Source="/Resources/excel.png" Height="40"  />
+
+            </Button.Content>
+        </Button>
+
+        <Button  Grid.Row="2" MaxWidth="500" Content="{DynamicResource bt_Add}" FontSize="20" Margin="0,5,20,0" Click="Add_Click"   FontFamily="Comic Sans MS">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="Background" Value="#cacad1"/>
@@ -147,15 +157,9 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Click="btExportClick" Grid.Row="2"
-                     Background="Transparent"
-                    Margin="0,5,3,5"                
-                HorizontalAlignment="Right">
-            <Button.Content >
-                <Image Source="/Resources/excel.png" Height="40"  />
-
-            </Button.Content>
-        </Button>
+        
+            
+        
 
 
     </Grid>

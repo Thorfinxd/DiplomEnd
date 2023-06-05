@@ -9,23 +9,23 @@
       Title="Add_Tovar_Page">
 
     <Grid>
-        <Grid Background="AliceBlue">
+        <Grid Background="#272537">
             <Grid.RowDefinitions>
                 <RowDefinition/>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
 
             <StackPanel MaxWidth="500">
-                <TextBlock Text="{DynamicResource tb_naimt}" FontSize="20"/>
+                <TextBlock Text="{DynamicResource tb_naimt}" FontSize="20" Foreground="White"/>
                 <TextBox Text="{Binding NaimTov}"/>
 
-                <TextBlock Text="{DynamicResource tb_Cenaed}" FontSize="20"/>
+                <TextBlock Text="{DynamicResource tb_Cenaed}" FontSize="20" Foreground="White"/>
                 <TextBox Text="{Binding CenaEdinica}"/>
 
-                <TextBlock Text="{DynamicResource tb_Category}" FontSize="20"/>
+                <TextBlock Text="{DynamicResource tb_Category}" FontSize="20" Foreground="White"/>
                 <TextBox Text="{Binding CategoryCategory.Category}"/>
 
-                <TextBlock Text="{DynamicResource tb_Desc}" FontSize="20"/>
+                <TextBlock Text="{DynamicResource tb_Desc}" FontSize="20" Foreground="White"/>
                 <TextBox Text="{Binding DescTov}"/>
                 
             </StackPanel>
@@ -35,7 +35,30 @@
                     Margin="10" 
                     Content="{DynamicResource bt_Save}" 
                     FontSize="20" 
-                    Click="Save_Click"/>
+                    Click="Save_Click">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#cacad1"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#27b459"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border  Height="40"
+                                        CornerRadius="13"
+                                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
 
         </Grid>
     </Grid>

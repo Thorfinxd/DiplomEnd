@@ -50,7 +50,7 @@
         </Button>
 
 
-        <DataGrid Grid.Row="1" Margin="10" Name="DGVKlients" IsReadOnly="True" AutoGenerateColumns="False">
+        <DataGrid Grid.Row="1" Margin="10" Name="DGVKlients" IsReadOnly="True" AutoGenerateColumns="False" Background="#272537">
             <DataGrid.Columns>
 
                 <DataGridTextColumn Width="*" Binding="{Binding KlientName}">
