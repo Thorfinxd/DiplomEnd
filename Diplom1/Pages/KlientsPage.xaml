@@ -1,0 +1,170 @@
+﻿<Page x:Class="DIplom.Pages.KlientsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DIplom.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="KlientsPage"
+      IsVisibleChanged="Klients_Vis_Change">
+
+    <Grid Background="#272537">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+
+        <TextBox    Name="TbSearch" Width="180" Height="30"  HorizontalAlignment="Left" 
+                    VerticalAlignment="Center" Margin="10,5"   TextChanged="Search_Tbox_Changed"/>
+
+        <TextBlock   Text="{DynamicResource tb_Search}"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="17,0,70,0" IsHitTestVisible="False" Height="27" 
+                   FontSize="16" FontFamily="Comic Sans MS"  Foreground="Black" >
+
+
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed">
+
+                    </Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName = TbSearch}" Value="">
+                            <Setter Property="Visibility" Value="Visible">
+                            </Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+
+        <Button Click="btExportClick" 
+                     Background="Transparent"
+                    Margin="50,0,0,0"                
+                HorizontalAlignment="Right">
+            <Button.Content >
+                <Image Source="/Resources/excel.png" Height="40"  />
+
+            </Button.Content>
+        </Button>
+
+
+        <DataGrid Grid.Row="1" Margin="10" Name="DGVKlients" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Width="*" Binding="{Binding KlientName}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource tb_Name}" FontSize="15"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Width="*" Binding="{Binding KlientSurname}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource tb_Familia}" FontSize="15"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Width="*" Binding="{Binding KlientSecondName}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource tb_Otchestvo}" FontSize="15"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Width="*" Binding="{Binding KlientCompany}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource tb_Company}" FontSize="15"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Width="*" Binding="{Binding KlientAdres}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource tb_Adres}" FontSize="15"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Width="*" Binding="{Binding KlientPhone}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource tb_Phone}" FontSize="15"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+       
+            <UniformGrid Grid.Row="2" Columns="3">
+            <Button Margin="5" Content="{DynamicResource bt_Delete}" FontSize="20" Click="Del_Test_Click">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#cacad1"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#8b161c"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border  Height="50"
+                                        CornerRadius="13"
+                                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Margin="5" Content="{DynamicResource bt_Add}" FontSize="20" Click="Add_Show_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#cacad1"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#2d8191"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border  Height="50"
+                                        CornerRadius="13"
+                                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Margin="5" Content="{DynamicResource bt_Redact}" FontSize="20" Click="Redact_Show_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#cacad1"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#915c23"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border  Height="50"
+                                        CornerRadius="13"
+                                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </UniformGrid>
+        
+
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,64 @@
+﻿<Page x:Class="DIplom.AddPages.Add_Postavka_Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DIplom.AddPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Add_Postavka_Page">
+
+    
+        <Grid Background="AliceBlue">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel MaxWidth="500">
+                <TextBlock Text="{DynamicResource tb_naimt}" FontSize="20"/>
+            <ComboBox Text="{Binding PostavkaNameTov}">
+                <ComboBoxItem Content="ККТ АТОЛ 50Ф"/>
+                <ComboBoxItem Content="Сканер штрих кода SB2108"/>
+                <ComboBoxItem Content=" Блок питания Unify OpenStage EU"/>
+                <ComboBoxItem Content="Кабель Ningbo SATA"/>
+                <ComboBoxItem Content="Переходник Ningbo"/>
+                <ComboBoxItem Content="Кабель Buro"/>
+                <ComboBoxItem Content="Адаптер Redline"/>
+                <ComboBoxItem Content="Модуль расширения Unify"/>
+                <ComboBoxItem Content="Сетевой удлинитель"/>
+            </ComboBox>
+
+            <TextBlock Text="{DynamicResource tb_naimp}" FontSize="20"/>
+            <ComboBox Text="{Binding PostavkaNamePost}">
+                <ComboBoxItem Content="Крушер"/>
+                <ComboBoxItem Content="Сафорд"/>
+                <ComboBoxItem Content="Ланцест"/>
+                <ComboBoxItem Content="Форграунд"/>
+                <ComboBoxItem Content="Крушер"/>
+                <ComboBoxItem Content="Фишер"/>
+
+            </ComboBox>
+
+            <TextBlock Text="{DynamicResource tb_kolvo}" FontSize="20"/>
+                <TextBox Text="{Binding PostavkaKolvo}"/>
+
+                <TextBlock Text="{DynamicResource tb_Cenaa}" FontSize="20"/>
+                <TextBox Text="{Binding PostavkaCena}"/>
+
+                <TextBlock Text="{DynamicResource tb_Date}" FontSize="20"/>
+                <TextBox Text="{Binding PostavkaDate}"/>
+
+                <TextBlock Text="{DynamicResource tb_Desc}" FontSize="20"/>
+                <TextBox Text="{Binding PostavkaDesc}"/>
+
+                
+
+
+            </StackPanel>
+
+        <Button Grid.Row="1" MaxWidth="500" Margin="10" Content="{DynamicResource bt_Save}" FontSize="20" Click="Save_Click"/>
+
+        </Grid>
+    
+</Page>

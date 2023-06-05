@@ -1,0 +1,78 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+
+
+
+    <v:String x:Key="tb_polz">User</v:String>
+    <v:String x:Key="tb_ZK">Zolotoy kod</v:String>
+    <v:String x:Key="tb_postn">Suppliers</v:String>
+
+    <v:String x:Key="tb_authorization">Authorization</v:String>
+    <v:String x:Key="tb_admin">Administrator</v:String>
+    <v:String x:Key="tb_tovar">Product</v:String>
+    <v:String x:Key="tb_postavka">Supply</v:String>
+    <v:String x:Key="tb_Klients">Clients</v:String>
+    <v:String x:Key="tb_sklad">Warehouse</v:String>
+    <v:String x:Key="tb_SD">To-do list</v:String>
+    <v:String x:Key="tb_Order">Order</v:String>
+    <v:String x:Key="tb_Orders">Orders</v:String>
+
+    <v:String x:Key="tb_Authform">a dynamically developing Russian company</v:String>
+    <v:String x:Key="tb_login">Login</v:String>
+    <v:String x:Key="tb_pass">Password</v:String>
+    <v:String x:Key="cb_pass">Show password</v:String>
+    <v:String x:Key="bt_vhod">LOG IN</v:String>
+
+    <v:String x:Key="tb_Search">Enter to search</v:String>
+    <v:String x:Key="tb_namet">Product Name</v:String>
+    <v:String x:Key="tb_ostatok">Remains</v:String>
+
+    <v:String x:Key="tb_namep">Name of the supplier</v:String>
+
+    <v:String x:Key="tb_namepost">Supplier name</v:String>
+    <v:String x:Key="tb_naimp">Name supplier </v:String>
+    <v:String x:Key="tb_kolvo">Quantity</v:String>
+    <v:String x:Key="tb_summa">Amount</v:String>
+    <v:String x:Key="tb_Date">Date</v:String>
+    <v:String x:Key="tb_Desc">Description</v:String>
+
+    <v:String x:Key="tb_namett">Name:</v:String>
+    <v:String x:Key="tb_Cena">Price:</v:String>
+    <v:String x:Key="tb_Cenaa">Price</v:String>
+    <v:String x:Key="tb_Category">Category:</v:String>
+
+    <v:String x:Key="tb_Name">Name</v:String>
+    <v:String x:Key="tb_Familia">Surname</v:String>
+    <v:String x:Key="tb_Otchestvo">Secondname</v:String>
+    <v:String x:Key="tb_Company">Company</v:String>
+    <v:String x:Key="tb_Adres">Address</v:String>
+    <v:String x:Key="tb_Phone">Phone</v:String>
+
+    <v:String x:Key="tb_naimt">Name product</v:String>
+    <v:String x:Key="tb_Cenaed">Unit price</v:String>
+
+
+    <v:String x:Key="title_SD">To-do list</v:String>
+    <v:String x:Key="tb_CreationDate">Creationdate</v:String>
+    <v:String x:Key="tb_Done">Done</v:String>
+    <v:String x:Key="tb_Dela">Affairs</v:String>
+
+    <v:String x:Key="tb_Zabp">Forgot password?</v:String>
+    <v:String x:Key="tb_vosst">Recover</v:String>
+
+    <v:String x:Key="bt_Delete">Delete</v:String>
+    <v:String x:Key="bt_Redact">Edit</v:String>
+    <v:String x:Key="bt_Add">Add</v:String>
+    <v:String x:Key="bt_Save">Save</v:String>
+   
+
+
+
+
+
+
+
+
+
+</ResourceDictionary>
