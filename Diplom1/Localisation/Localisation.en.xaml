@@ -64,8 +64,27 @@
     <v:String x:Key="bt_Delete">Delete</v:String>
     <v:String x:Key="bt_Redact">Edit</v:String>
     <v:String x:Key="bt_Add">Add</v:String>
+    <v:String x:Key="bt_Change">Change</v:String>
     <v:String x:Key="bt_Save">Save</v:String>
-   
+
+    <v:String x:Key="tb_FioKlienta">FIO Klients</v:String>
+    <v:String x:Key="tb_DateS">Creation Date</v:String>
+    <v:String x:Key="tb_idZakaza">id Order</v:String>
+
+    <v:String x:Key="tb_Dates">Date:</v:String>
+    <v:String x:Key="tb_Klientss">Klients:</v:String>
+    <v:String x:Key="tb_Tovars">Products:</v:String>
+    <v:String x:Key="bt_AddTov">Add product</v:String>
+    <v:String x:Key="bt_DelTov">Delete product</v:String>
+    <v:String x:Key="bt_SaveChange">Save changes</v:String>
+    <v:String x:Key="bt_Zakaz">Make order</v:String>
+
+    <v:String x:Key="tb_idtovara">id product</v:String>
+    <v:String x:Key="tb_Namet">Name</v:String>
+
+    <v:String x:Key="tb_ViborS">Select yourself from the list:</v:String>
+
+
 
 
 

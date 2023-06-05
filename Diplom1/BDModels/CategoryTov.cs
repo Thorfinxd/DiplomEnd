@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Diplom1
+namespace Diplom1.BDModels
 {
     public partial class CategoryTov
     {
@@ -13,9 +13,7 @@ namespace Diplom1
 
         public int CaterogyTovid { get; set; }
         public string Category { get; set; } = null!;
-        public int TovarTovarId { get; set; }
 
-        public virtual Tovar TovarTovar { get; set; } = null!;
         public virtual ICollection<Tovar> TovarCategoryCategories { get; set; }
         public virtual ICollection<Tovar> TovarTovarCategories { get; set; }
     }

@@ -13,18 +13,93 @@
             <RowDefinition Height="40"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+
+        <Button Click="btExportClick" Grid.Row="0"
+                     Background="Transparent"
+                    Margin="5,0,0,0"                
+                HorizontalAlignment="Left">
+            <Button.Content >
+                <Image Source="/Resources/excel.png" Height="40"  />
+
+            </Button.Content>
+        </Button>
+
+
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,10,10,0">
-            <Button Content="Удалить" Name="btnDelete" Click="btnDelete_Click" Width="100"/>
-            <Button Content="Изменить" Name="btnChange" Click="btnChange_Click" Width="100" Margin="10,0,0,0"/>
-            <Button Content="Добавить" Name="btnAdd" Click="btnAdd_Click" Width="100" Margin="10,0,0,0"/>
+            <Button Content="{DynamicResource bt_Delete}" Name="btnDelete" Click="btnDelete_Click" Width="100">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#cacad1"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#8b161c"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border  Height="30"
+                                        CornerRadius="13"
+                                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Content="{DynamicResource bt_Change}" Name="btnChange" Click="btnChange_Click" Width="100" Margin="10,0,0,0">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#cacad1"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#915c23"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border  Height="30"
+                                        CornerRadius="13"
+                                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Content="{DynamicResource bt_Add}" Name="btnAdd" Click="btnAdd_Click" Width="100" Margin="10,0,0,0">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#cacad1"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#2d8191"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border  Height="30"
+                                        CornerRadius="13"
+                                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </StackPanel>
         <DataGrid Grid.Row="1" Margin="10,5,10,10" Background="transparent" BorderBrush="Black" AutoGenerateColumns="False"
                   CanUserAddRows="False" IsReadOnly="True" Name="dgvOrders" HeadersVisibility="Column" Grid.ColumnSpan="2">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="id Заказа" Binding="{Binding OrdersId}"/>
-                <DataGridTextColumn Header="Дата создания" Width="200" Binding="{Binding OrdersDate}"/>
-                <DataGridTextColumn Header="ФИО клиента" Width="*" Binding="{Binding KlientiKlient.kilentFIO}"/>
-                <DataGridTextColumn Header="Телефон" MinWidth="130"  Binding="{Binding KlientiKlient.KlientPhone}"/>
+                <DataGridTextColumn Header="{DynamicResource tb_idZakaza}" Binding="{Binding OrdersId}"/>
+                <DataGridTextColumn Header="{DynamicResource tb_DateS}" Width="200" Binding="{Binding OrdersDate}"/>
+                <DataGridTextColumn Header="{DynamicResource tb_FioKlienta}" Width="*" Binding="{Binding KlientiKlient.kilentFIO}"/>
+                <DataGridTextColumn Header="{DynamicResource tb_Phone}" MinWidth="130"  Binding="{Binding KlientiKlient.KlientPhone}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

@@ -1,8 +1,5 @@
-﻿using DIplom.AddPages;
-using Diplom1.BDModels;
-using Diplom1.Classes;
+﻿using Diplom1.BDModels;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,16 +15,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DIplom.Pages
+namespace Diplom1.Pages
 {
     /// <summary>
-    /// Interaction logic for ListView_Tovar_Page.xaml
+    /// Interaction logic for ListView_User_Page.xaml
     /// </summary>
-    public partial class ListView_Tovar_Page : Page
+    public partial class ListView_User_Page : Page
     {
-        public ListView_Tovar_Page()
+        public ListView_User_Page()
         {
-            InitializeComponent();           
+            InitializeComponent();
             UpdateData();
             cmbSearchParametrs.Items.Add("Без сортировки ");
             cmbSearchParametrs.Items.Add("По возрастанию ");
@@ -38,8 +35,6 @@ namespace DIplom.Pages
             fltSearchParametrs.Items.Add("Периферия");
             fltSearchParametrs.Items.Add("Услуга");
             fltSearchParametrs.SelectedIndex = 0;
-
-
         }
 
         private void UpdateData()
@@ -57,22 +52,22 @@ namespace DIplom.Pages
 
             if (cmbSearchParametrs.SelectedIndex == 0)
             {
-                tovars.ToList(); 
+                tovars.ToList();
             }
             if (cmbSearchParametrs.SelectedIndex == 1)
             {
-                tovars = tovars.OrderByDescending(t=>t.NaimTov).ToList(); ;
+                tovars = tovars.OrderByDescending(t => t.NaimTov).ToList(); ;
             }
             if (cmbSearchParametrs.SelectedIndex == 2)
             {
                 tovars = tovars.OrderBy(t => t.NaimTov).ToList(); ;
             }
 
-            if(fltSearchParametrs.SelectedIndex != 0)
+            if (fltSearchParametrs.SelectedIndex != 0)
             {
                 if (fltSearchParametrs.SelectedIndex == 0)
                     tovars = tovars.Where(c => c.CategoryCategory.CaterogyTovid == 0).ToList();
-                else if(fltSearchParametrs.SelectedIndex == 1)
+                else if (fltSearchParametrs.SelectedIndex == 1)
                     tovars = tovars.Where(c => c.CategoryCategory.CaterogyTovid == 1).ToList();
                 else if (fltSearchParametrs.SelectedIndex == 2)
                     tovars = tovars.Where(c => c.CategoryCategory.CaterogyTovid == 2).ToList();
@@ -82,35 +77,6 @@ namespace DIplom.Pages
             LV_Tovar.ItemsSource = tovars;
 
 
-        }
-
-        private void Del_Click(object sender, RoutedEventArgs e)
-        {
-            if (LV_Tovar.SelectedItems.Count > 1)
-                return;
-            {
-                Tovar TovarDel = LV_Tovar.SelectedItem as Tovar;
-
-                if (MessageBox.Show("You want delete?", "Rly want?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-                {
-                    CoreModel.init().Tovars.Remove(TovarDel);
-                    CoreModel.init().SaveChanges();
-                    UpdateData();
-                }
-            }
-        }
-
-            private void Redact_Click(object sender, RoutedEventArgs e)
-            {
-                Tovar TovarEdit = LV_Tovar.SelectedItem as Tovar;
-                NavigationService.Navigate(new Add_Tovar_Page(TovarEdit));
-                UpdateData();
-            }
-
-        private void Add_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Add_Tovar_Page(new Tovar()));
-            UpdateData();
         }
 
         private void TB_Vis_Change(object sender, DependencyPropertyChangedEventArgs e)
@@ -132,33 +98,5 @@ namespace DIplom.Pages
         {
             UpdateData();
         }
-
-        private void btExportClick(object sender, RoutedEventArgs e)
-        {
-            SaveFileDialog dialog = new SaveFileDialog();
-            dialog.Filter = "Файлы excel|*.xlsx";
-            if (dialog.ShowDialog() == true)
-            {
-                List<Tovar> tovars = CoreModel.init().Tovars.ToList();
-                string[,] values = new string[tovars.Count + 1, 4];
-
-                values[0, 0] = "Наименование товара";
-                values[0, 1] = " Цена за единицу товара";
-                values[0, 2] = " Категория";
-                values[0, 3] = " Описание";
-
-
-                for (int i = 0; i < tovars.Count; i++)
-                {
-                    values[i + 1, 0] = tovars[i].NaimTov;
-                    values[i + 1, 1] = tovars[i].CenaEdinica.ToString();
-                    values[i + 1, 2] = tovars[i].CategoryCategory.Category;
-                    values[i + 1, 3] = tovars[i].DescTov;
-
-                }
-                ExcelClass.saveExcel(dialog.FileName, "Товар", values);
-            }
-        }
     }
-    }
-
+}

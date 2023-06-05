@@ -189,6 +189,22 @@
 
                 </StackPanel>
 
+                <StackPanel  HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                    <ComboBox SelectionChanged="cbLangChancked"
+                          Grid.Row="1" 
+                          Grid.Column="1" 
+                          HorizontalAlignment="Right"
+                          VerticalAlignment="Bottom"
+                          Width="45" 
+                          Name="cbLearn"
+                          Margin="0,65,5,5"
+                          Height="35"
+                          FontSize="15">
+                        <ComboBoxItem Content="Ru" Tag="RU"/>
+                        <ComboBoxItem Content="En" Tag="EN"/>
+                    </ComboBox>
+                </StackPanel>
+
 
 
             </Grid>

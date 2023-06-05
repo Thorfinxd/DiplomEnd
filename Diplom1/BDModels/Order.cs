@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Diplom1
+namespace Diplom1.BDModels
 {
     public partial class Order
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Diplom1
+namespace Diplom1.BDModels
 {
     public partial class Klienti
     {
@@ -17,10 +17,14 @@ namespace Diplom1
         public string? KlientCompany { get; set; }
         public string? KlientAdres { get; set; }
         public long? KlientPhone { get; set; }
-        public string kilentFIO { get
+        public string kilentFIO
+        {
+            get
             {
                 return KlientSurname + " " + KlientName + " " + KlientSecondName;
-            } }
+            }
+        }
+
         public virtual ICollection<Order> Orders { get; set; }
         public override string ToString()
         {

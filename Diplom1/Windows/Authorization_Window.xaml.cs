@@ -1,5 +1,4 @@
-﻿using Diplom1;
-
+﻿using Diplom1.BDModels;
 using System;
 using System.Collections.Generic;
 using System.Globalization;

@@ -65,9 +65,29 @@
 
     <v:String x:Key="bt_Delete">Удалить</v:String>
     <v:String x:Key="bt_Redact">Редактировать</v:String>
-    <v:String x:Key="bt_Add">Добавление</v:String>
-
+    <v:String x:Key="bt_Add">Добавить</v:String>
+    <v:String x:Key="bt_Change">Изменить</v:String>
     <v:String x:Key="bt_Save">Сохранение</v:String>
+
+    <v:String x:Key="tb_FioKlienta">ФИО клиента</v:String>
+    <v:String x:Key="tb_DateS">Дата создания</v:String>
+    <v:String x:Key="tb_idZakaza">id Заказа</v:String>
+
+
+
+    <v:String x:Key="tb_Dates">Дата:</v:String>
+    <v:String x:Key="tb_Klientss">Клиенты:</v:String>
+    <v:String x:Key="tb_Tovars">Товары:</v:String>
+    <v:String x:Key="bt_AddTov">Добавить товар</v:String>
+    <v:String x:Key="bt_DelTov">Удалить товар</v:String>
+    <v:String x:Key="bt_SaveChange">Сохранить изменения</v:String>
+    <v:String x:Key="bt_Zakaz">Сделать заказ</v:String>
+
+    <v:String x:Key="tb_idtovara">id товара</v:String>
+    <v:String x:Key="tb_Namet">Название</v:String>
+
+
+    <v:String x:Key="tb_ViborS">Выберите себя из списка:</v:String>
 
 
 

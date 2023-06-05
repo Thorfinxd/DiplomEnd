@@ -15,6 +15,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.EntityFrameworkCore;
 using Diplom1.Windows;
+using Diplom1.BDModels;
+using Diplom1.Classes;
+using Microsoft.Win32;
 
 namespace Diplom1.Pages
 {
@@ -70,6 +73,34 @@ namespace Diplom1.Pages
             }
             else
                 MessageBox.Show("Вы ничего не выбрали");
+        }
+
+        private void btExportClick(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Файлы excel|*.xlsx";
+            if (dialog.ShowDialog() == true)
+            {
+                List<Order> orders = CoreModel.init().Orders.ToList();
+                string[,] values = new string[orders.Count + 1, 4];
+
+                values[0, 0] = "id Заказа";
+                values[0, 1] = "Дата создания";
+                values[0, 2] = "ФИО клиента";
+                values[0, 3] = "Телефон";
+
+
+
+                for (int i = 0; i < orders.Count; i++)
+                {
+                    values[i + 1, 0] = orders[i].OrdersId.ToString();
+                    values[i + 1, 1] = orders[i].OrdersDate.ToString();
+                    values[i + 1, 2] = orders[i].KlientiKlient.kilentFIO;
+                    values[i + 1, 3] = orders[i].KlientiKlient.KlientPhone.ToString();
+
+                }
+                ExcelClass.saveExcel(dialog.FileName, "Клиенты", values);
+            }
         }
     }
 }

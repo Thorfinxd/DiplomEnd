@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Diplom1.BdModels;
+using Diplom1.BDModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace Diplom1.Windows

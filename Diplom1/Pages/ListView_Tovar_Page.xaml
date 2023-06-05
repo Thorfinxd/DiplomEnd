@@ -147,6 +147,15 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
+        <Button Click="btExportClick" Grid.Row="2"
+                     Background="Transparent"
+                    Margin="0,5,3,5"                
+                HorizontalAlignment="Right">
+            <Button.Content >
+                <Image Source="/Resources/excel.png" Height="40"  />
+
+            </Button.Content>
+        </Button>
 
 
     </Grid>

@@ -16,9 +16,9 @@
             <RowDefinition Height="35"/>
         </Grid.RowDefinitions>
         <StackPanel>
-            <TextBlock Text="Дата:"/>
+            <TextBlock Text="{DynamicResource tb_Dates}"/>
             <DatePicker Name="dtpDate"/>
-            <TextBlock Text="Клиенты:"/>
+            <TextBlock Text="{DynamicResource tb_Klientss}"/>
             <ComboBox Name="cmbClients" SelectedItem="{Binding KlientiKlient}"/>
         </StackPanel>
         <Grid Grid.Row="1">
@@ -27,30 +27,30 @@
                 <ColumnDefinition Width="100"/>
             </Grid.ColumnDefinitions>
             <StackPanel>
-                <TextBlock Text="Товары:"/>
+                <TextBlock Text="{DynamicResource tb_Tovars}"/>
                 <ComboBox Name="cmbTovars"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Margin="3,0,0,0">
-                <TextBlock Text="Кол-во:"/>
+                <TextBlock Text="{DynamicResource tb_kolvo}"/>
                 <TextBox Name="tbTovarsCount" Text="1"/>
             </StackPanel>
         </Grid>
         <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0,0,0,5">
-            <Button Content="Добавить товар" Name="btnPlus" Click="btnPlus_Click" Width="200" HorizontalAlignment="Right" FontSize="14"/>
-            <Button Content="Удалить товар" Margin="10,0,0,0" Name="btnMinus" Click="btnMinus_Click" Width="200" HorizontalAlignment="Right" FontSize="14"/>
+            <Button Content="{DynamicResource bt_AddTov}" Name="btnPlus" Click="btnPlus_Click" Width="200" HorizontalAlignment="Right" FontSize="14"/>
+            <Button Content="{DynamicResource bt_DelTov}" Margin="10,0,0,0" Name="btnMinus" Click="btnMinus_Click" Width="200" HorizontalAlignment="Right" FontSize="14"/>
         </StackPanel>
         
         <DataGrid Grid.Row="3" Background="transparent" BorderBrush="Black" AutoGenerateColumns="False"
                   CanUserAddRows="False" IsReadOnly="True" Name="dgvTovars" HeadersVisibility="Column">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="id товара" Binding="{Binding TovarId}"/>
-                <DataGridTextColumn Header="Название" Width="*" Binding="{Binding NaimTov}"/>
-                <DataGridTextColumn Header="Цена" Width="150" Binding="{Binding CenaEdinica}"/>
-                <DataGridTextColumn Header="Кол-во" Width="100" Binding="{Binding TovarsCount}"/>
+                <DataGridTextColumn Header="{DynamicResource tb_idtovara}" Binding="{Binding TovarId}"/>
+                <DataGridTextColumn Header="{DynamicResource tb_Namet}" Width="*" Binding="{Binding NaimTov}"/>
+                <DataGridTextColumn Header="{DynamicResource tb_Cenaa}" Width="150" Binding="{Binding CenaEdinica}"/>
+                <DataGridTextColumn Header="{DynamicResource tb_kolvo}" Width="100" Binding="{Binding TovarsCount}"/>
             </DataGrid.Columns>
 
 
         </DataGrid>
-        <Button Grid.Row="4" Content="Сохранить изменения" Margin="10,5,0,0" Name="btnSave" Click="btnSave_Click" Width="250" HorizontalAlignment="Right"/>
+        <Button Grid.Row="4" Content="{DynamicResource bt_SaveChange}" Margin="10,5,0,0" Name="btnSave" Click="btnSave_Click" Width="250" HorizontalAlignment="Right"/>
     </Grid>
 </Window>

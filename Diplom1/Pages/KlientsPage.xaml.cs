@@ -1,6 +1,5 @@
 ﻿using DIplom.AddPages;
-using Diplom1;
-
+using Diplom1.BDModels;
 using Diplom1.Classes;
 using Microsoft.Win32;
 using System;
